@@ -475,8 +475,10 @@ int main(){
 	printf("%s", ascii.dcol1);
 	printf("%s %s %s%s\n",ascii.dcol2,USERTEXT, TEXTCOLOUR, lowercase(getenv("USER")));
 	printf("%s %s %s%s\n",ascii.dcol3,DISROTEXT, TEXTCOLOUR, lowercase(os_string));
-	printf("%s %s %s%s\n",ascii.dcol4,KERNELTEXT, TEXTCOLOUR, ui.release);
-	printf("%s %s %s%s\n",ascii.dcol5,MODELTEXT, TEXTCOLOUR, systemmodel);
+	if (SHOW_MODEL == 1)
+		printf("%s %s %s%s\n",ascii.dcol4,MODELTEXT, TEXTCOLOUR, systemmodel);
+	else
+		printf("%s %s %s%s\n",ascii.dcol4,KERNELTEXT, TEXTCOLOUR, ui.release);
 #if defined(CLOCK_BOOTTIME) || defined(CLOCK_UPTIME) || defined(__APPLE__)
 	printf("%s %s %s%ldh %ldm\n", ascii.dcol5,lowercase(UPTIMETEXT), TEXTCOLOUR, si.tv_sec / 3600, (si.tv_sec / 60) - (si.tv_sec / 3600 * 60));
 #else
