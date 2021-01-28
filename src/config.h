@@ -15,7 +15,8 @@ Block characters are shown inside this comment. If you can't see them, then your
 	█ ▄ ▀ ●
 	*/
 //---------------------------------------------------------------------------------------------
-#define SHOW_MODEL 0 // Only works on Linux
+#define SHOW_MODEL 0  // Only works on Linux, replaces kernel version
+                      // 0 = show kernel version, 1 = show model
 
 #define USERTEXT    "     USER"//
 #define DISROTEXT   "   DISTRO"//
